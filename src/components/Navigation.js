@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 
 const navigationMenu = [
     {href:'/', label: 'Home'},
-    {href:'/services', label: 'Services'},
+    {href:'/projects', label: 'Projects'},
     {href:'/blog', label: 'Blog'},
     {href:'/about', label: 'About'},
     {href:'/contact', label: 'Contact'},
@@ -15,10 +15,15 @@ const navigationMenu = [
 ]
 const Navigation = () => {
     const [open, setOpen] = useState(false);
-
     const pathname = usePathname();
-
     let newPathname = '';
+
+    newPathname = pathname;
+    if (pathname.includes('/blog')) {
+        newPathname = '/blog';
+    } else if (pathname.includes('/projects')) {
+        newPathname = '/projects';
+    }
 
 
     let wHeight = null;
@@ -63,8 +68,7 @@ const Navigation = () => {
         <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
             <div>
              <Link href="/" className='flex items-center gap-2'>
-                <img src='/images/logoai.png' alt='logo' className='w-12 h-12 object-contain'/>
-               <p className='text-[40px] text-gray-700 font-bold cursor-pointer'> Agway<span className='text-blue-500 sm:block-hidden' >Investment</span></p></Link>
+                <p className='text-[30px] text-gray-800 font-bold cursor-pointer'> Agway<span className='text-blue-500 sm:block-hidden' >Investment</span></p></Link>
             </div>  
             <div className='flex'>
             <ul role="list" className='hidden md:flex space-x-8'>
@@ -73,7 +77,8 @@ const Navigation = () => {
                         <Link href={menu.href} className={`relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full
                         before:h-[2px] before:bg-blue-500 before:origin-[100%, 50%] before:transition-all before:duration-300
                         before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%]
-                        hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px] uppercase font-semibold pb-2`}>{menu.label}</Link>
+                        hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px] uppercase font-semibold pb-2 ${newPathname === menu.href ? 
+                        "border-blue-500 text-blue-500 before:scale-x-[1.05]" : "border-transparent"}`}>{menu.label}</Link>
                     </li>
                 ))}
             </ul>

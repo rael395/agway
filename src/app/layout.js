@@ -3,6 +3,7 @@ import Hero from '@/components/Hero'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import About from '@/components/About'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-[#f3f5f8] overflow-x-hidden
       w-full`}>
         <Navigation />
-        {children}</body>
+        {children}
+        <Footer className='bg-white py-16 md:py-24'/>
+        </body>
     </html>
   )
 }

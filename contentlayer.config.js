@@ -63,7 +63,7 @@ const Category = defineNestedType(() =>({
 
 const Project = defineDocumentType(() =>({
     name: "Project",
-    filePathPattern: `projects/*mdx`,
+    filePathPattern: `project/*mdx`,
     contentType: "mdx",
     fields:{
         title: {
@@ -72,13 +72,23 @@ const Project = defineDocumentType(() =>({
             required: true,
         },
         type: {
-            type: "stri,ng",
+            type: "string",
             description: "The type of the project",
             required: true,
         },
         date: {
             type: "date",
             description: "The date of the project",
+            required: true,
+        },
+        year: {
+            type: "string",
+            description: "The year the project was done",
+            required: true,
+        },
+        excerpt: {
+            type: "string",
+            description: "The excerpt of the project",
             required: true,
         },
         image: {
@@ -94,6 +104,11 @@ const Project = defineDocumentType(() =>({
         client: {
             type: "string",
             description: "The client of the project",
+            required: true,
+        },
+        role: {
+            type: "string",
+            description: "The role or service of the project",
             required: true,
         },
     },

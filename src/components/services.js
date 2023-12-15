@@ -78,7 +78,7 @@ features: [
         number: '03',
         icon:  BiNotepad,
         title: "Tailored Proposal Just for You",
-        description: "Based on our understanding of your needs, our dedicated team will craft a personalized proposal. This document will outline the recommended services, the solutions we propose, and the associated costs. It's a comprehensive overview to give you clarity on what to expect.",
+        description: "Based on our understanding of your needs, our dedicated team will craft a personalized proposal which will outline the recommended services, proposed solutions, and the associated costs. It's a comprehensive overview to give you clarity on what to expect.",
         btn: {
           href: "#",
           label: "Learn More"
@@ -87,8 +87,8 @@ features: [
       {
         number: '04',
         icon:  BiRocket,
-        title: "Confirmation and Delivery",
-        description: "If you find our proposal aligns with your goals, the next step is simple. Confirm your commitment to move forward with us. From there, we kick off the implementation phase, working closely with you throughout the process. Whether it's providing expert consultancy, managing your projects, or delivering essential supplies, we're here to support your success.",
+        title: "Confirmation and Implementation",
+        description: "If our proposal aligns with your goals, confirm your commitment to move forward, and we'll work closely with you to implement the solution, providing either expert consultancy, managing projects, or delivering essential supplies to support your success.",
         btn: {
           href: "#",
           label: "Learn More"
@@ -184,7 +184,7 @@ const Services = ({className}) => {
                         whileHover={{ y: -10, transition: 0.1, }}
                         className='group duration-300 pt-32
                         pl-10 pr-10 pb-20 bg-white relative overflow-hidden 
-                        hover:bg-[#64748b] hover:shadow-2xl'>
+                        hover:bg-[#fb2576] hover:shadow-2xl'>
                             <span className='text-[200px] inline-block z-[1]
                             font-semibold absolute -top-[120px] opacity-5 left-0
                             leading-0'> { step.number}</span>

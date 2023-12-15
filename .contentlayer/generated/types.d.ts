@@ -39,12 +39,18 @@ export type Project = {
   title: string
   /** The date of the project */
   date: IsoDateTimeString
+  /** The year the project was done */
+  year: string
+  /** The excerpt of the project */
+  excerpt: string
   /** The featured image of the project */
   image: string
   /** The location of the project */
   location: string
   /** The client of the project */
   client: string
+  /** The role or service of the project */
+  role: string
   /** MDX file body */
   body: MDX
   url: string

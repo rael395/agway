@@ -46,7 +46,7 @@ const Testimonials = ({className}) => {
     useEffect(() => {
         setIsEnd(sliderRef.current.swiper.isEnd);
         setIsBeginning(sliderRef.current.swiper.isBeginning);
-    }, [])
+    });
 
     const prevHandler = useCallback(() => {
         if(!sliderRef.current) return;
@@ -121,7 +121,7 @@ const Testimonials = ({className}) => {
                             ref={sliderRef}
                             speed={700}
                             spaceBetween={30}
-                            onslideChange={(swiper) => setSlideIndex(swiper.activeIndex)}
+                            onSlideChange={(swiper) => setSlideIndex(swiper.activeIndex)}
                             className='z-50 py-32 mb-7 relative flex items-center'
                             >
                                 {testimonialsContent.testimonials.map((testimonials, idx) => (
